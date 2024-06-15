@@ -1,6 +1,11 @@
+
 html, body {
     margin: 0;
     padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #1B1924;
+    box-sizing: border-box;
 }
 
 .visually-hidden {
@@ -13,3 +18,63 @@ html, body {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+main.wrapper {
+    max-width: 317px;
+    margin: 51px auto;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+div.img-wrapper {
+    width: 100%;
+    height: auto;
+}
+
+img.logo {
+    width: 90px;
+    height: 90px;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+label.visually-hidden {
+    
+}
+
+#endorsement-input {
+    border: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    resize: none;
+    background-color: #444059;
+    max-width: 100%;
+    height: 118px;
+    border-radius: 8px;
+    padding: 18px 12px;
+    box-sizing: border-box;
+}
+
+button#publish-btn {
+   
+}
+
+h2 {
+   
+}
+
+ul#endorsements-list {
+    
+}
+
+li.endorsement-el {
+    
+}
+
