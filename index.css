@@ -63,6 +63,7 @@ h1 {
     font-family: "Inter", sans-serif;
     font-size: 15px;
     margin-bottom: 13px;
+    color: #FFFFFF;
 }
 
 button#publish-btn {
@@ -96,5 +97,6 @@ li.endorsement-el {
     padding: 13px 15px;
     font-size: 12px;
     font-family: "Inter", sans-serif;
+    border-radius: 8px;
 }
 

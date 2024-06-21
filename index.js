@@ -1,6 +1,6 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+import { getDatabase, ref, onValue, get } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 
 //First initialize the fire base config. Write down the data that you have
 const firebaseConfig = {
@@ -18,8 +18,20 @@ const endorsementDbRef = ref(database, "/endorsements")
 
 //Read the database value
 onValue(endorsementDbRef, (snapshot) => {
-    console.log(snapshot.val());
+    //console.log(snapshot.val());
 })
+
+const text = document.getElementById("endorsement-input")
+const publishButton = document.getElementById("publish-btn")
+const endorsementsList = document.getElementById("endorsements-list")
+
+function publishEndorsement() {
+    publishButton.addEventListener("click", () => {
+        text.value
+    })
+}
+
+publishEndorsement()
 
 // console.log();
 
