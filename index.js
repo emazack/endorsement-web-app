@@ -31,6 +31,15 @@ function publishEndorsement() {
     })
 }
 
+function getEndorsement() {
+    array.forEach(element => {
+        
+    });
+    const listEl = document.createElement("li")
+    listEl.className = "endorsement-el"
+    endorsementsList.appendChild(listEl)
+}
+
 publishEndorsement()
 
 // console.log();
