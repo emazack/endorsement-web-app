@@ -1,6 +1,6 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
-import { getDatabase, ref, onValue, get } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 
 //First initialize the fire base config. Write down the data that you have
 const firebaseConfig = {
@@ -16,9 +16,18 @@ const database = getDatabase(app)
 //Create a reference, a path. Connect the database with the reference
 const endorsementDbRef = ref(database, "/endorsements")
 
-//Read the database value
+//Read and get the database value
 onValue(endorsementDbRef, (snapshot) => {
-    //console.log(snapshot.val());
+    if (snapshot.exists()) {
+        snapshot.forEach((el) => {
+            const listEl = document.createElement("li")
+            listEl.className = "endorsement-el"
+            listEl.textContent = el.val()
+            endorsementsList.appendChild(listEl)
+        });
+    } else {
+        console.log("No data available at the specified path.");
+    }
 })
 
 const text = document.getElementById("endorsement-input")
@@ -32,12 +41,16 @@ function publishEndorsement() {
 }
 
 function getEndorsement() {
-    array.forEach(element => {
-        
-    });
-    const listEl = document.createElement("li")
-    listEl.className = "endorsement-el"
-    endorsementsList.appendChild(listEl)
+    //Get the data from db
+    endorsementDbRef.get().then((snapshot) => {
+        console.log(snapshot);
+        // array.forEach(element => {
+
+        // });
+    })
+    // const listEl = document.createElement("li")
+    // listEl.className = "endorsement-el"
+    // endorsementsList.appendChild(listEl)
 }
 
 publishEndorsement()
