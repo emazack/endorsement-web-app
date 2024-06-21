@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 
+//First initialize the fire base config. Write down the data that you have
 const firebaseConfig = {
     // apiKey: "YOUR_API_KEY",
     // authDomain: "YOUR_AUTH_DOMAIN",
@@ -12,9 +13,9 @@ const firebaseConfig = {
     // appId: "YOUR_APP_ID"
 };
 
+//Second inizialize the Firebase app. Connect the data that you have with firebase
+const app = initializeApp(firebaseConfig)
+//Finally get the database from your firebase app
+const database = getDatabase(app)
 
-const database = getDatabase(configDatabase.databaseUrl)
-const app = initializeApp(database)
-
-console.log(app);
 
