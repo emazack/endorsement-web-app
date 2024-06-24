@@ -100,3 +100,10 @@ li.endorsement-el {
     border-radius: 8px;
 }
 
+.no-endorsement-placeholder{
+    color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+

@@ -1,6 +1,13 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+
+const text = document.getElementById("endorsement-input")
+const publishButton = document.getElementById("publish-btn")
+const endorsementsList = document.getElementById("endorsements-list")
+// const noEndorsmentPlaceholderEl = document.createElement("li");
+// noEndorsmentPlaceholderEl.className = "no-endorsement-placeholder"
+// noEndorsmentPlaceholderEl.textContent = "...No endorsement yet"
 
 //First initialize the fire base config. Write down the data that you have
 const firebaseConfig = {
@@ -18,43 +25,32 @@ const endorsementDbRef = ref(database, "/endorsements")
 
 //Read and get the database value
 onValue(endorsementDbRef, (snapshot) => {
+    while (endorsementsList.firstChild) {
+        endorsementsList.removeChild(endorsementsList.firstChild);
+    }
     if (snapshot.exists()) {
         snapshot.forEach((el) => {
-            const listEl = document.createElement("li")
-            listEl.className = "endorsement-el"
-            listEl.textContent = el.val()
-            endorsementsList.appendChild(listEl)
+            endorsementsList.appendChild(createListElement("endorsement-el", el.val()))
         });
     } else {
-        console.log("No data available at the specified path.");
+        endorsementsList.appendChild(createListElement("no-endorsement-placeholder", "...No endorsement yet"))
     }
 })
 
-const text = document.getElementById("endorsement-input")
-const publishButton = document.getElementById("publish-btn")
-const endorsementsList = document.getElementById("endorsements-list")
 
 function publishEndorsement() {
     publishButton.addEventListener("click", () => {
-        text.value
+        push(endorsementDbRef, text.value)
     })
 }
 
-function getEndorsement() {
-    //Get the data from db
-    endorsementDbRef.get().then((snapshot) => {
-        console.log(snapshot);
-        // array.forEach(element => {
-
-        // });
-    })
-    // const listEl = document.createElement("li")
-    // listEl.className = "endorsement-el"
-    // endorsementsList.appendChild(listEl)
+function createListElement(className, personalizedText) {
+    let listEl = document.createElement("li")
+    listEl.className = `${className}`
+    listEl.textContent = personalizedText
+    return listEl
 }
 
 publishEndorsement()
-
-// console.log();
 
 
