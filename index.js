@@ -5,9 +5,6 @@ import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebas
 const text = document.getElementById("endorsement-input")
 const publishButton = document.getElementById("publish-btn")
 const endorsementsList = document.getElementById("endorsements-list")
-// const noEndorsmentPlaceholderEl = document.createElement("li");
-// noEndorsmentPlaceholderEl.className = "no-endorsement-placeholder"
-// noEndorsmentPlaceholderEl.textContent = "...No endorsement yet"
 
 //First initialize the fire base config. Write down the data that you have
 const firebaseConfig = {
@@ -41,6 +38,7 @@ onValue(endorsementDbRef, (snapshot) => {
 function publishEndorsement() {
     publishButton.addEventListener("click", () => {
         push(endorsementDbRef, text.value)
+        text.value = ""
     })
 }
 
