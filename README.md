@@ -1,6 +1,7 @@
 # Firebase Endorsement App
 
-This is a simple web application that allows users to publish endorsements and view a list of endorsements in real-time. The app is built using plain JavaScript, HTML, and CSS, and utilizes Firebase Realtime Database for data storage and retrieval.
+This is a simple web application that allows users to publish endorsements and view a list of endorsements in real-time. The app is built using plain JavaScript, HTML, and CSS, and utilizes Firebase Realtime Database for data storage and retrieval. At the moment the database it has been disabled and you will receive:
+`PERMISSION_DENIED: Permission denied` to avoid malicious requests.
 
 ## Features
 
