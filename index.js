@@ -1,4 +1,5 @@
 
+//In order to use Firebase functionality: Import the function initializeApp from Firebase js file
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
 import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 
@@ -6,7 +7,7 @@ const text = document.getElementById("endorsement-input")
 const publishButton = document.getElementById("publish-btn")
 const endorsementsList = document.getElementById("endorsements-list")
 
-//First initialize the fire base config. Write down the data that you have
+//First configure firebase. Write down the data that you have
 const firebaseConfig = {
     databaseURL: "https://realtime-database-9afdc-default-rtdb.europe-west1.firebasedatabase.app/",
 };
