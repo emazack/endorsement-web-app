@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig)
 //Finally get the database from your firebase app
 const database = getDatabase(app)
 
-//Create a reference, a path. Connect the database with the reference
+//Create a reference in the database and call it endorsements
 const endorsementDbRef = ref(database, "/endorsements")
 
 //Read and get the database value
