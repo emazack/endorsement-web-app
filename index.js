@@ -9,7 +9,7 @@ const endorsementsList = document.getElementById("endorsements-list")
 
 //First configure firebase. Write down the data that you have
 const firebaseConfig = {
-    databaseURL: "https://realtime-database-9afdc-default-rtdb.europe-west1.firebasedatabase.app/",
+    databaseURL: DATABASE_URL,
 };
 
 //Second inizialize the Firebase app. Connect the data that you have with firebase
