@@ -21,7 +21,8 @@ const database = getDatabase(app)
 //Create a reference in the database and call it endorsements
 const endorsementDbRef = ref(database, "/endorsements")
 
-//Read and get the database value
+//Read and get the database value:
+//onValue watch for the reference given, making available a snapshot of the db to look at
 onValue(endorsementDbRef, (snapshot) => {
     while (endorsementsList.firstChild) {
         endorsementsList.removeChild(endorsementsList.firstChild);
