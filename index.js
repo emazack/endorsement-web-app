@@ -38,6 +38,7 @@ onValue(endorsementDbRef, (snapshot) => {
 
 function publishEndorsement() {
     publishButton.addEventListener("click", () => {
+        //At that Ref (endorsementDbRef), insert a record with text.value
         push(endorsementDbRef, text.value)
         text.value = ""
     })
