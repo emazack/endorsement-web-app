@@ -9,7 +9,7 @@ const endorsementsList = document.getElementById("endorsements-list")
 
 //First configure firebase. Write down the data that you have
 const firebaseConfig = {
-    databaseURL: DATABASE_URL,
+    databaseURL: process.env.DATABASE_URL,
 };
 
 //Second inizialize the Firebase app. Connect the data that you have with firebase
