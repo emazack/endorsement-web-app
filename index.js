@@ -1,5 +1,5 @@
 
-//In order to use Firebase functionality: Import the function initializeApp from Firebase js file
+//In order to use Firebase functionality: Import the function initializeApp from Firebase js file and different other functions from firebase-database
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
 import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 
